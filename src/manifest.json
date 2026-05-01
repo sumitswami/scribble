@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Trackpad Scribble",
+  "version": "1.0",
+  "description": "Draw on your trackpad like handwriting",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icons/icon.png"
+  }
+}

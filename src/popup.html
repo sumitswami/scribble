@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 400px;
+      height: 500px;
+      background: #fff;
+      font-family: system-ui, sans-serif;
+      overflow: hidden;
+    }
+
+    #toolbar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-bottom: 1px solid #e5e5e5;
+      background: #fafafa;
+    }
+
+    #toolbar button {
+      font-size: 12px;
+      padding: 4px 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: white;
+      cursor: pointer;
+    }
+
+    #toolbar button:hover { background: #f0f0f0; }
+
+    #colorPicker { width: 28px; height: 28px; border: none; cursor: pointer; }
+
+    #sizeSlider { width: 70px; }
+
+    label { font-size: 12px; color: #555; }
+
+    #canvas {
+      display: block;
+      cursor: crosshair;
+      touch-action: none; /* CRITICAL — prevents scroll hijacking */
+    }
+  </style>
+</head>
+<body>
+  <div id="toolbar">
+    <input type="color" id="colorPicker" value="#000000" title="Stroke color"/>
+    <input type="range" id="sizeSlider" min="1" max="20" value="3" title="Brush size"/>
+    <label id="sizeLabel">3px</label>
+    <button id="undoBtn">Undo</button>
+    <button id="clearBtn">Clear</button>
+    <button id="copyBtn">Copy PNG</button>
+  </div>
+  <canvas id="canvas" width="400" height="460"></canvas>
+  <script src="popup.js"></script>
+</body>
+</html>
